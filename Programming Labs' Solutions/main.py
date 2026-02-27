@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------------
-# Name:        Introduction (main.py)
+# Name:        Lab-00 (main.py)
 # Purpose:     Practicing basic skills in Python
 #
 # Author:      Brian Z.
