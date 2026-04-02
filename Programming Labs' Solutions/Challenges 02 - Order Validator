@@ -1,0 +1,21 @@
+membership = input("Enter membership type (gold/silver/regular): ")
+total = float(input("Enter order total: "))
+
+discount = 0
+
+if membership == "gold":
+    if total > 50:
+        discount = total * 0.20
+    elif total >= 25:
+        discount = total * 0.10
+elif membership == "silver":
+    if total > 50:
+        discount = total * 0.15
+    elif total >= 25:
+        discount = total * 0.05
+else:
+    if total > 75:
+        discount = total * 0.10
+
+final_total = total - discount
+print("Your final total is: $" + str(final_total))

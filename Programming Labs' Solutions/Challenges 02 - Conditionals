@@ -1,0 +1,60 @@
+# Function to check even or odd
+def even_or_odd(n):
+  # check the variable n
+  # delete 'pass' when you start coding
+  if n % 2 == 0:
+    return "Even"
+  else:
+    return "Odd"
+  
+# Function to check positive, negative or zero
+def pos_neg_zero(n):
+  # check the variable n
+  # delete 'pass' when you start coding
+  if 0 < n:
+    return "Positive"
+  elif n < 0:
+    return "Negative"
+  else:
+    return "Zero"
+
+# Function for FizzBuzz Lite
+def fizz_buzz(n):
+  # check the variable n
+  # delete 'pass' when you start coding
+  if n % 3 == 0 and n % 5 == 0:
+    return "FizzBuzz"
+  elif n % 3 == 0:
+    return "Fizz"
+  elif n % 5 == 0:
+    return "Buzz"
+  else:
+    return n
+
+# Function to check leap year
+def is_leap_year(year):
+  # check the variable year
+  # delete 'pass' when you start coding
+  if year % 4 == 0 and not year % 100 == 0:
+    return "Leap Year"
+  else:
+    return "Not Leap Year"
+
+# Function to find greatest of three numbers
+def greatest_of_three(a, b, c):
+  # check the variables a, b, c
+  # delete 'pass' when you start coding
+  if a < b and c < b:
+    return b
+  elif b < a and c < a:
+    return a
+  elif b < c and a < c:
+    return c
+  else:
+    return a
+
+print(even_or_odd(5))
+print(pos_neg_zero(10))
+print(fizz_buzz(8))
+print(is_leap_year(2025))
+print(greatest_of_three(5,2,8))

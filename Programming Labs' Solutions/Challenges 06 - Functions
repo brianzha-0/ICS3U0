@@ -1,0 +1,39 @@
+def password_check(password):
+  has_min_chars = False
+  has_uppercase = False
+  has_lowercase = False
+  digit_counter = 0
+
+  error_messages = []
+  combined_error_messages = ""
+  
+  if 8 <= len(password):
+    has_min_chars = True
+  
+  for letter in range(0, len(password), 1):
+    if password[letter].isupper():
+      has_uppercase = True
+    elif password[letter].islower():
+      has_lowercase = True 
+    elif password[letter].isdigit():
+      digit_counter += 1
+  
+  if has_min_chars and has_uppercase and has_lowercase and digit_counter == 1:
+    error_messages.append("Password is valid.\n")
+    
+  if not has_min_chars:
+    error_messages.append("Error: Password must be at least 8 characters long.\n")
+  
+  if not has_lowercase:
+    error_messages.append("Error: Password must contain at least one lowercase letter.")
+  
+  if not has_uppercase:
+    error_messages.append("Error: Password must contain at least one uppercase letter.\n")
+  
+  if digit_counter != 1:
+    error_messages.append("Error: Password must contain exactly one digit.\n")
+
+  for error_message in error_messages:
+    combined_error_messages+=error_message
+
+  return combined_error_messages
