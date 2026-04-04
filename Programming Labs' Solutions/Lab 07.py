@@ -41,7 +41,7 @@ movie_buffer_in_seconds = 60
 movie_length_in_seconds = time_in_seconds(movie_length_in_minutes, movie_buffer_in_seconds)
 
 if movie_length_in_minutes < 120:
-  print(f"Your movie of choice has a rather conventional watch time. More specifically, the amount of seconds it takes for the entire movie to play from start to finish is ")
+  print(f"Your movie of choice has a rather conventional watch time. More specifically, the amount of seconds it takes for the entire movie to play from start to finish is {movie_length_in_seconds} seconds!")
 
 token_id = "hfda7f94hh493q85gdj7th"
 original_query = 'h'
