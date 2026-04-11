@@ -1,0 +1,26 @@
+Requirement Analysis (Planning document)
+
+Name: Brian
+
+Occupation Topic (first letter of first name): Bus Driver
+
+Name of Function (and parameters): plan_out_shortest_route(waysides, station = random.choice(list(waysides.nodes)), terminal = waysides.nodes.values())
+
+Describe what the function will do, and what is being returned (do not write code here).  This should be a short task/calculation:
+    The function that I intend to make, relating to facilitating and aiding the work that this personally chosen occupation of bus drivers are tasked with, will expectantly determine the least amount of travel distance required to arrive at a destination (defaulted or specified).
+	
+	Such a quantified piece of data should, in good hopes, be returned for versatile usage of it throughout a greater program; this idea leads into the next point of interest/thought-provoking question.
+
+Describe the multiple (creative) ways you will use the function:
+    I will attempt to apply my generic function in the following fashions:
+    A coordinated system that can take in several inputs from passengers (those aboard the vehicle) to order and foresee the best and most fuel-efficient way of going forward
+    Allow multiple busses to sync up and make arrangements in order to avoid coinciding at bus stops at the same time
+    Instate gas refilling stations throughout the map and optimize the code to be adaptive and reactive to these “necessities” once a bus unit is running low on fuel
+    If a tie occurs between shortest paths that is calculated for a or various busses, give priority to the bus corresponding with the first inputs and match them with a road with the highest lexicographical sum (might relate to Benford’s law in a way, I don’t know what that is for sure though)
+
+How you will use other concepts (if statements, loops, string/math functions etc): 
+    I will try to use if statements to check values and error handling to not go forward with the program if an improper value is inputted and/or outputted
+
+    Different types of loops such as for loops and while loops will help to repeat blocks of code repeatedly that follow a vague pattern
+
+    String and math functions will be used. I can think of one right off that bat, which is when calculating the highest lexicographical sum of the numerical values of the connected stations leading up to the terminal in figuring out the best route
