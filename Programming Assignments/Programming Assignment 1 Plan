@@ -13,7 +13,9 @@ Describe what the function will do, and what is being returned (do not write cod
 
 Describe the multiple (creative) ways you will use the function:
     I will attempt to apply my generic function in the following fashions:
+    
     A coordinated system that can take in several inputs from passengers (those aboard the vehicle) to order and foresee the best and most fuel-efficient way of going forward
+
     Allow multiple busses to sync up and make arrangements in order to avoid coinciding at bus stops at the same time
     Instate gas refilling stations throughout the map and optimize the code to be adaptive and reactive to these “necessities” once a bus unit is running low on fuel
     If a tie occurs between shortest paths that is calculated for a or various busses, give priority to the bus corresponding with the first inputs and match them with a road with the highest lexicographical sum (might relate to Benford’s law in a way, I don’t know what that is for sure though)
