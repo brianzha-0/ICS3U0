@@ -1,0 +1,88 @@
+#-----------------------------------------------------------------------------
+# Name:        Best (Bus) Driver (best_bus_driver.py)
+# Purpose:     The reason this program is coded the way it is can be attributed to the challenges faced by workers that tirelessly drive public/school buses, navigating and weaving through winding streets and roads
+#
+# Author:      Brian Z.
+# Created:     09-Apr-2026
+# Updated:     17-Apr-2026
+#-----------------------------------------------------------------------------
+
+# Reference code used: https://www.google.com/search?smstk=Chh4RzdpcmlDSFlzVlZlUUs0ckV3RzNiQT0QBA%3D%3D&smstidx=0&q=dijkstra+algorithm&udm=50&csuir=1&aep=34&kgs=01c102cfcdf193ae&shndl=37&shmd=H4sIAAAAAAAA_3WNOw7CMAxA6dqRkYkZiZguDIi7RG4SOYbmI8dVOBmH4FTAjFif9N4bn8O49Xy7NxXc40JFWGPaXaNqbReA3ruhpqjsjCsJWkBx8VilpALIybaIEqzGNc0ZeTE102HzGuy_ACek0GAWzJ4zAZVCSyBLgp5DVpgeP8x-_OxRvJ3OJ1-_jzc96s2ouQAAAA&shmds=v1_ATWGeeNVwIQ8yC8GTzYHvZvMWOgiRBE3IIcgFl2RIN8Sh8J4YQ&source=sh%2Fx%2Faio%2Fm1%2F1&safe=active&ssui=on
+
+import math
+
+def throwError():
+  return "Please enter a real(istic) location on the live map next time."
+  
+def plan_out_best_route(hot_spots, station, terminal):
+  lst = [(0, station)]
+  dist = {station: 0}
+  
+  for stop in hot_spots:
+    dist[stop] = math.inf
+  
+  idx = 0
+  while 0 < len(lst):
+    curr = lst[idx][0]
+    node = lst[idx][1]
+    
+    lst.pop(idx)
+    
+    idx += 1
+
+    lst.sort()
+
+    if not curr < dist[node]:
+      continue
+
+    for adj, val in graph[node].items():
+      tot = curr + val
+
+      if tot < dist[adj]:
+        dist[adj] = tot
+        lst.append((tot, adj))
+        
+    for item in dist:
+      if dist[item] == math.inf and 65 <= ord(item) - 1:
+        dist[item] = dist[chr(ord(item) - 1)]
+
+    return dist
+
+graph = {
+    'A': {'B': 4, 'C': 1},
+    'B': {'D': 5},
+    'C': {'B': 2, 'D': 8},
+    'D': {'E': 6},
+    'E': {}
+}
+
+start = input("Enter the letter corresponding to the starting bus station: ")
+requested_stops = []
+num_of_passengers = int(input())
+
+for i in range(num_of_passengers):
+  ask = input()
+  
+  if ask in graph:
+    requested_stops.append(ask)
+  else:
+    print(throwError())
+
+for stop in requested_stops:
+  if plan_out_best_route(graph, start, 'E')[stop] != math.inf:
+    result = str(plan_out_best_route(graph, start, 'E')[stop])
+  else:
+    result = "?"
+
+  # Program doesn't work for destinations that take more than one segment to reach from the provided starting point/node
+  if result != '1':
+    print(f"{start} to {stop} is {result} kilometers")
+  else:
+    print(f"{start} to {stop} is {result} kilometer")
+
+  # Message that could be displayed on a digital screen on a bus, for example
+  # if result != '1':
+  #   print("From the starting point, " + start + ", en route to stop " + stop + " will require taking a road that is " + result + " kilometers in length.\n")
+  # else:
+  #   print("From the starting point, " + start + ", en route to stop " + stop + " will require taking a road that is " + result + " kilometer in length.\n")
+  
