@@ -4,7 +4,7 @@
 #
 # Author:      Brian Z.
 # Created:     20-Apr-2026
-# Updated:     22-Apr-2026
+# Updated:     27-Apr-2026
 #-----------------------------------------------------------------------------
 
 def miles_to_km(distance):
@@ -16,7 +16,7 @@ def miles_to_km(distance):
   Parameters
   ----------
   distance : float
-    the function is designed to be able to convert any realistic/feasible (non-negative/with ando only with magnitude) amount which, in this case is distance, of miles into kilometers
+    the function is designed to be able to convert any realistic/feasible (non-negative/with and only with magnitude) amount which, in this case is distance, of miles into kilometers
   
   Returns
   -------
@@ -115,7 +115,7 @@ def letter_count(word, target):
       # Add one to count conditionally (notice the indentation of this line) since one check can only result in at most one more occurance of the target letter
       count += 1
 
-  # Pass back the amount of times target appeared  when searching a provided string
+  # Pass back the amount of times target appeared when searching a provided string
   return count
 
 
