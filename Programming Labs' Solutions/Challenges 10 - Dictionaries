@@ -1,0 +1,31 @@
+dct = {}
+
+itm = input()
+while itm != "done":
+  if not itm in dct:
+    prc = float(input())
+
+    qtn = int(input())
+    
+    dct[itm] = {"price": prc, "quantity": qtn}
+    
+  else:
+    qtn = int(input())
+
+    dct[itm]["quantity"] += qtn
+
+  itm = input()
+
+tot = 0
+for itm in dct:
+  print(itm + ' | ' + str(dct[itm]["price"]) + ' | ' + str(dct[itm]["quantity"]) + ' | ' + str(dct[itm]["price"] * dct[itm]["quantity"]))
+  tot += dct[itm]["price"] * dct[itm]["quantity"]
+
+print(tot)
+
+inf = int(input())
+for itm in dct:
+  tot += dct[itm]["price"] * dct[itm]["quantity"] * inf / 100
+  dct[itm]["price"] *= 1 + inf / 100
+
+print(round(tot, 2))
