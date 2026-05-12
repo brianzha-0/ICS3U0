@@ -1,10 +1,10 @@
 #-----------------------------------------------------------------------------
-# Name:        Lab-08 (Lab 08.py)
-# Purpose:     Put error handling techniques and features from within the Python programming language to use
+# Name:        Lab-12 (Lab 12.py)
+# Purpose:     Put error handling techniques and features from within the Python programming language to use in addition to leveraging Python's response to errors with respect to what is shown in the Console (output)
 #
 # Author:      Brian Z.
 # Created:     05-May-2026
-# Updated:     07-May-2026
+# Updated:     12-May-2026
 #-----------------------------------------------------------------------------
 
 def miles_to_km(distance):
